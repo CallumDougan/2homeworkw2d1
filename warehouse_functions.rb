@@ -110,7 +110,7 @@ BAYS=[
 {
   letter: "c", 
   number: "9",
-  content: "sharpie"
+  content: "shoelace"
 },
 
 {
@@ -186,8 +186,9 @@ BAYS=[
 
 def item_finder_content(baynum)
   baynum_split = baynum.downcase.split(//)
-  BAYS.select{|x| x[:letter] == baynum_split[0] && x[:number] == baynum_split[1]}.first[:content]
+ BAYS.select{|x| x[:letter] == baynum_split[0] && x[:number] == baynum_split[1]}.first[:content]
 end
+
 
 def item_finder_bay (item_name)
   BAYS.select{|x| x[:content] == item_name}.first[:letter] + BAYS.select{|x| x[:content] == item_name}.first[:number]
@@ -206,6 +207,7 @@ items = [item_finder_content(baynum_1), item_finder_content(baynum_2), item_find
 
 lowest, highest = items.map { |item| find_bay_index(item) }.minmax
 highest - lowest
+
 end
 
 def find_bay_index(item) 

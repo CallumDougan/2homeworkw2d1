@@ -17,5 +17,5 @@ require_relative('./warehouse_functions.rb')
 # found_bays_plural = item_finder_bay_plural("b5", "b10", "b6")
 # puts "bays of assigned items are #{found_bays_plural} - expected A1, 2, 3"
 
-total_distance = distance_calc("b5", "b10", "b6")
+total_distance = distance_calc("b2", "b9", "b6")
 puts "bay products are #{total_distance} bays apart"
