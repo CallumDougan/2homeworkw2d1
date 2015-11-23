@@ -8,7 +8,7 @@ puts "item at #{baynum} is #{found_item_content}"
 puts "enter item to search: "
 item_name = gets.chomp.to_str
 found_item_bay = item_finder_bay(item_name)
-puts "item is at bay #{found_item_bay}, expected to be A1"
+puts "item is at bay #{found_item_bay}"
 
 puts "Enter item bay numbers (3) to search: "
 input_1 = gets.chomp.to_str 
