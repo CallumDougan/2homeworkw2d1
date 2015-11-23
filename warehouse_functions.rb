@@ -1,201 +1,169 @@
-BAYS=[
+BAYS = [
 {
-  letter: "a", 
-  number: "10",
+  baynumber: "a10", 
   content: "rubber band"
 },
 
 {
-  letter: "a", 
-  number: "9",
+  baynumber: "a9", 
   content: "glow stick"
 },
 
 {
-  letter: "a", 
-  number: "8",
+  baynumber: "a8", 
   content: "model car"
 },
 
 {
-  letter: "a", 
-  number: "7",
+  baynumber: "a7", 
   content: "bookmark"
 },
 
 {
-  letter: "a", 
-  number: "6",
+  baynumber: "a6", 
   content: "shovel"
 },
 
 {
-  letter: "a", 
-  number: "5",
+  baynumber: "a5", 
   content: "rubber duck"
 },
 
 {
-  letter: "a", 
-  number: "4",
+  baynumber: "a4", 
   content: "hanger"
 },
 
 {
-  letter: "a", 
-  number: "3",
+  baynumber: "a3", 
   content: "blouse"
 },
 
 {
-  letter: "a", 
-  number: "2",
+  baynumber: "a2", 
   content: "stop sign"
 },
 
 {
-  letter: "a", 
-  number: "1",
+  baynumber: "a1", 
   content: "needle"
 },
 
 {
-  letter: "c", 
-  number: "1",
+  baynumber: "c1", 
   content: "rusty nail"
 },
 
 {
-  letter: "c", 
-  number: "2",
+  baynumber: "c2", 
   content: "drill press"
 },
 
 {
-  letter: "c", 
-  number: "3",
+  baynumber: "c3", 
   content: "chalk"
 },
 
 {
-  letter: "c", 
-  number: "4",
+  baynumber: "c4", 
   content: "word search"
 },
 
 {
-  letter: "c", 
-  number: "5",
+  baynumber: "c5", 
   content: "thermometer"
 },
 
 {
-  letter: "c", 
-  number: "6",
+  baynumber: "c6", 
   content: "face wash"
 },
 
 {
-  letter: "c", 
-  number: "7",
+  baynumber: "c7", 
   content: "paint brush"
 },
 
 {
-  letter: "c", 
-  number: "8",
+  baynumber: "c8", 
   content: "candy wrapper"
 },
 
 {
-  letter: "c", 
-  number: "9",
+  baynumber: "c9", 
   content: "shoelace"
 },
 
 {
-  letter: "c", 
-  number: "10",
+  baynumber: "c10", 
   content: "leg warmers"
 },
 
 {
-  letter: "b", 
-  number: "1",
+  baynumber: "b1", 
   content: "tyre swing"
 },
 
 {
-  letter: "b", 
-  number: "2",
+  baynumber: "b2", 
   content: "sharpie"
 },
 
 {
-  letter: "b", 
-  number: "3",
+  baynumber: "b3", 
   content: "picture frame"
 },
 
 {
-  letter: "b", 
-  number: "4",
+  baynumber: "b4", 
   content: "photo album"
 },
 
 {
-  letter: "b", 
-  number: "5",
+  baynumber: "b5", 
   content: "nail filer"
 },
 
 {
-  letter: "b", 
-  number: "6",
+  baynumber: "b6", 
   content: "tooth paste"
 },
 
 {
-  letter: "b", 
-  number: "7",
+  baynumber: "b7", 
   content: "bath fizzers"
 },
 
 {
-  letter: "b", 
-  number: "8",
+  baynumber: "b8", 
   content: "tissue box"
 },
 
 {
-  letter: "b", 
-  number: "9",
+  baynumber: "b9", 
   content: "deodorant"
 },
 
 {
-  letter: "b", 
-  number: "10",
+  baynumber: "b10", 
   content: "cookie jar"
 }
 
 ]
 
-#later question re: relative distances - simply make a seperate array!
 
 
 def item_finder_content(baynum)
-  baynum_split = baynum.downcase.split(//)
- BAYS.select{|x| x[:letter] == baynum_split[0] && x[:number] == baynum_split[1]}.first[:content]
+ BAYS.select{|x| x[:baynumber] == baynum}.first[:content]
 end
 
 
 def item_finder_bay (item_name)
-  BAYS.select{|x| x[:content] == item_name}.first[:letter] + BAYS.select{|x| x[:content] == item_name}.first[:number]
+  BAYS.select{|x| x[:content] == item_name}.first[:baynumber]
 end
 
 def item_finder_content_plural(baynum_1, baynum_2, baynum_3)
-  item_finder_content(baynum_1) + " " + item_finder_content(baynum_2)+ " and " +item_finder_content(baynum_3)
+  item_finder_content(baynum_1) + " " + item_finder_content(baynum_2) + " and " + item_finder_content(baynum_3)
 end
 
 def item_finder_bay_plural(item_1, item_2, item_3)
