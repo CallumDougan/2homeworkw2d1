@@ -8,6 +8,7 @@ class Fish
     @type
   end
 
+
 end
 
 
@@ -18,10 +19,8 @@ class River
     @wildlife = fish
   end
 
-  def type
-    @wildlife.each do |fish|
-      puts @type
-    end
+  def fish_list
+    @wildlife
   end
 
   def welcome
@@ -29,9 +28,12 @@ class River
   end
 
   def health_check
-    puts "Current fish stocks: \n\n #{type} \n\n"
+   puts "Current fish stocks: \n\n"
+    @wildlife.each do |fish|
+      puts fish.type
+    end
+    " \n\n\n"
   end
-
 end  
 
 
@@ -39,18 +41,28 @@ end
 
 class Bear
 
-  def initialize (name, type)
+  def initialize (name, type, food)
     @name = name
     @type = type
-    food = []
+    @food = []
   end
 
   def roar
     puts "#{@name} the #{@type} roars!  It's mildly intimidating, actually."
   end
 
-  def catch_fish
+  def food
+    puts "#{@name} contains: \n\n"
+    @food.each do |food|
+      puts food.type
+    end
+    puts "\n\n"
+  end
 
+  def catch_fish (river)
+    puts "#{@name} catches a fish!"
+    @food << river.fish_list.pop
+    # puts "#{@name} ate a #{@food}"
   end
 
 end
